@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1e1e2e;
+  overflow: hidden;
+}
+
+.particle {
+  display: inline-block;
+  position: absolute;
+  border: 10px solid transparent;
+  filter: saturate(1000%);
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: animate .4s ease forwards;
+}
+
+@keyframes animate {
+  0% { 
+    height: 0;
+    width: 0;
+  }
+  50% {
+    border-width: 30px;
+  }
+  100% {
+    filter: blur(15px);
+  }
+}
