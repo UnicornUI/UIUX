@@ -1,0 +1,45 @@
+.content {
+    width: 100wh;
+    height: 100vh;
+    padding: 300px 0 0 500px;
+    background-color: #000000;
+/*    opacity: 0.8;*/
+}
+.mflow-box {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+/*    overflow: hidden;*/
+}
+.mflow-box::before {
+    content: "";
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 2;
+}
+.mflow-box::after {
+    content: "";
+    width: 300%;
+    height: 300%;
+/*    background-image: conic-gradient(#EEEEEE22, #F0C237, #EEEEEE22 30%);*/
+    background-image: conic-gradient(#EEEEEE22,#fc97e9,#e7d0fe,#cca9fd,#02eded,#adf674,#fefe05,#fec900,#EEEEEE22 30%);
+    border-radius: 50%;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    z-index: 1;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
