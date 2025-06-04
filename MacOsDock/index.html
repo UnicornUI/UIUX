@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>MacOs docker 效果设计</title>
+        <link rel="stylesheet" href="./dock.css" type="text/css" media="all" />
+    </head>
+
+    <body>
+        <div class="glass">
+            <ul class="dock">
+                <li>🐋</li>
+                <li>👽</li>
+                <li>🐳</li>
+                <li>😚</li>
+                <li>😂</li>
+                <li>😅</li>
+                <li>😍</li>
+                <li>🙄</li>
+                <li>💕</li>
+                <li>🧊</li>
+                <li>🤡</li>
+            </ul>
+        </div>
+        <script>
+            // 为目标元素添加鼠标 点击，移动，离开等事件
+            document.querySelectorAll(".dock li").forEach((li) => {
+                // 监听点击事件，开始加载动画。
+                li.addEventListener("click", (e) => {
+                    e.currentTarget.classList.add("loading");
+                });
+
+                li.addEventListener("mousemove", (e) => {
+                    let item = e.target;
+                    let itemRect = item.getBoundingClientRect();
+                    let offset =
+                        Math.abs(e.clientX - itemRect.left) / itemRect.width;
+                    console.log(offset);
+                    // 获取当前元素的前一个元素和后一个元素
+                    let prev = item.previousElementSibling || null;
+                    let next = item.nextElementSibling || null;
+                    // 图标需要放大的倍数
+                    let scale = 0.8;
+                    // 重置所有的元素的缩放比例
+                    resetscale();
+                    // 设置当前元素前一个元素的缩放比例
+                    if (prev) {
+                        prev.style.setProperty(
+                            "--scale",
+                            1 + scale * Math.abs(offset - 1),
+                        );
+                    }
+                    // 设置当前所在的元素放大比例
+                    item.style.setProperty("--scale", 1 + scale);
+                    // 设置当前元素后一个元素的缩放比例
+                    if (next) {
+                        next.style.setProperty("--scale", 1 + scale * offset);
+                    }
+                });
+            });
+            // 设置 表情元素所在的 dock 栏 监听鼠标离开事件，恢复所有表情的放大特效
+            document
+                .querySelector(".dock")
+                .addEventListener("mouseleave", (e) => {
+                    resetscale();
+                });
+            // 重置所有的元素为原始比例
+            function resetscale() {
+                document.querySelectorAll(".dock li").forEach((li) => {
+                    li.style.setProperty("--scale", 1);
+                });
+            }
+        </script>
+    </body>
+</html>
