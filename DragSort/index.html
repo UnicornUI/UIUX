@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+      .list {
+        margin: 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .list-item {
+        height: 20px;
+        width: 80%;
+        background: linear-gradient(#234a24,#23445a);
+        color: white;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+      }
+      .list-item.moving {
+        background: transparent;
+        color: transparent;
+        border-radius: 5px;
+        border: 1px dashed #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list">
+      <div class="list-item" draggable="true">1</div>
+      <div class="list-item" draggable="true">2</div>
+      <div class="list-item" draggable="true">3</div>
+      <div class="list-item" draggable="true">4</div>
+      <div class="list-item" draggable="true">5</div>
+      <div class="list-item" draggable="true">6</div>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/flip.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</html>
