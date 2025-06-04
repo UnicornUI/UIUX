@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3127362 */
+  src: url('iconfont.woff2?t=1641710381479') format('woff2'),
+       url('iconfont.woff?t=1641710381479') format('woff'),
+       url('iconfont.ttf?t=1641710381479') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-control:before {
+  content: "\e602";
+}
+
+.icon-chat01:before {
+  content: "\e64e";
+}
+
+.icon-Dashboard:before {
+  content: "\e76a";
+}
+
+.icon-huanbaopingtai-Dashboard-01:before {
+  content: "\e603";
+}
+
+.icon-settings:before {
+  content: "\e8db";
+}
+
+.icon-monitoring:before {
+  content: "\e88e";
+}
+
+.icon-fenxiang:before {
+  content: "\e600";
+}
+
+.icon-setting:before {
+  content: "\e616";
+}
+
+.icon-MedalofHonor:before {
+  content: "\e793";
+}
+
+.icon-caidan:before {
+  content: "\e601";
+}
+
+.icon-text-page-:before {
+  content: "\e63d";
+}
+
+.icon-video:before {
+  content: "\e608";
+}
+
+.icon-folder-close:before {
+  content: "\e671";
+}
+
+.icon-Emoji:before {
+  content: "\e672";
+}
+
